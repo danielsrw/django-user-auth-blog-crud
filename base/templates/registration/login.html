@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Sign In{% endblock %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+    <div class="contact-form-head section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="contact-inner-title">
+                        <h2>Sign In</h2>
+                        <p>
+                            Don't have an account <strong><a href="/register" class="text-white">Sign Up</a></strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="form-main">
+                        <form class="form" method="post">
+                            {% csrf_token %} {{ form|crispy }}
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group button">
+                                        <button type="submit" class="btn ">Sign In</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

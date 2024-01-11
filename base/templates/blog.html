@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Blog{% endblock %} 
+{% load static %}
+
+{% block content %}
+
+	<div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Blog</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            Blog
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <section class="section blog-section blog-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <!-- Start Single Blog -->
+                            <div class="single-blog">
+                                <div class="blog-img">
+                                    <a href="{% url 'blogSingle' %}">
+                                        <img src="{% static 'images/blog/blog-1.jpg' %}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <a class="category" href="#">Blog</a>
+                                    <h4>
+                                        <a href="{% url 'blogSingle' %}">Boost your conversion rate</a>
+                                    </h4>
+                                    <p>Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor
+                                        ividunt dolore magna.</p>
+                                    <div class="autor">
+                                        <a href="#"><img src="{% static 'images/blog/comment1.jpg' %}"
+                                                alt="#"></a>
+                                        <a href="#" class="name">Roel Aufderhar</a>
+                                        <ul class="meta-content">
+                                            <li>
+                                                <a href="#">Mar 15,2023</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">5 min read</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Blog -->
+                        </div>
+                    </div>
+                    <div class="pagination left blog-grid-page">
+                        <div class="pagination-list">
+                            <li>
+                                <a href="#">Prev</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">Next</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                
+                {% include 'inc/sidebar.html' %}
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
